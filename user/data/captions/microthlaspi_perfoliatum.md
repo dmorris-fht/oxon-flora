@@ -1,0 +1,10 @@
+### *Microthlaspi perfoliatum* Perfoliate Penny-cress 
+(L.) F.K.Mey.
+#### Ecology
+A winter annual of dry open calcareous ground with extremely low nutrients.  Formerly a weed of arable fields, then known from quarries, now often lost from these, eg Stonesfield Quarry.
+#### Status & distribution
+Rare in southern England, mostly in the Cotswolds. Oxfordshire contains the main stronghold of this rare plant.
+#### Trends
+Known to Druce (1927) at six sites and to Killick et al. (1998) at five tetrads. Initially funded by Plantlife and then by NE, the OFG monitor and manage four sites, with help from the Wychwood Flora Group, the Oxfordshire Conservation Volunteers and Brian Laney. Restoration of quarries to arable and dense grass growth are two major causes of decline of populations. Apparently flourishing on a road verge on the edge of a gravel terrace, especially after dry summers when grass growth is curtailed.
+#### Conservaton work
+Seed was collected and grown on by John Campbell of the Oxfordshire Biological Records. Funded by Plantlife then Natural England the Oxfordshire Flora Group (then Rare Plants Group, of the Ashmolean Natural History Society of Oxfordshire) has been monitoring and managing populations since 1994.  The Group carried out scarification at the Linch Hill verge site in 1995 and 1998, and the County Council assisted with grass cutting and cleaning the grips.. The arable headland at Palmer's Bank, Charlbury was scarified in 1994-5 and 1998, and is now managed as a conservation headland the the Blenheim Estate. In December 1998 Railtrack assisted by clearing small trees from the railway cutting where the plant grew at Bridgefield Bridge near Stonesfield and this site was regularly scarified following an experiment which confirmed the best  season for scarifying being late August to early September (Rich, T.C.G., Lambrick, C.R. and Kitchen C. and Kitchen M.A.R., 1998. Conserving Britain’s diversity: Thlaspi perfoliatum L. (Brassicaceae), Cotswold pennycress. Biological Conservation 7: 915-926.
