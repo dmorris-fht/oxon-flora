@@ -1,0 +1,10 @@
+### *Salvia pratensis* Meadow Clary 
+L.
+#### Ecology
+This long-lived perennial prefers waysides and ancient grasslands on chalk and limestone, and may have a requirement for raised magnesium (Scott 1989).
+#### Status & distribution
+Mainly in southeast England. In Oxfordshire moslty in the Cotswolds.
+#### Trends
+This medicinally important perennial may have been introduced, it was not recorded in the wild until 1699, but Marren (1999) says that its genetic gradation across the country suggests it is long established. Known to Sibthorp between Ardley and Middleton Stoney where it still survives.
+#### Conservaton work
+It was extensively monitored in the 1980s by Anita Jo Dunn. Studies by Lyndon Cornwallis at Glyme Farm show that it requires relaxation of grazing to allow seedset, and that its seed germinates readily but cannot establish in dense sward. Monitoring by the Rare Plants Group (of the Ashmolean Natural History Society of Oxfordshire) for Plantlife found that at Ardley several large plants had survived from Sue Everett’s EN survey in 1985 till 1994. Sadly, most these had died by 2008 and 12 seedlings could not be refound, the vegetation had become very rank with Hogweed and Cow Parsley, and the Salvia leaves were often eaten by slugs. However two attempts by the RPG to introduce plants raised from seed from the original plants were made into an area where the topsoil had been scraped off by the Highways Authority (arranged by the County Ecologist). Of four planted out in 2000 three were inadvertently weed-killed and one survives, with offspring. Of 27 planted out in 2007 most were uprooted by rabbits and two survive. Additionally seed from the original plants was scattered into 2 m² in 2005 and another 2 m² in 2006; this has resulted in a few young plants initially establishing and mostly then disappearing. Other sites are currently monitored and managed by the Cotswold RPG. At Kitesbridge an inexplicable change has occurred from plants resembling S. pratensis to resembling S. verbenaca. Introduced at Blenheim Farm BBOWT Nature Reserve when removed from a position by a letterbox in Charlbury; and at Warburg Reserve.
