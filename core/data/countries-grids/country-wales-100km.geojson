@@ -1,0 +1,15 @@
+{
+"type": "FeatureCollection",
+"name": "country-wales-100km",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::27700" } },
+"features": [
+{ "type": "Feature", "properties": { "GridType": "100 km square", "GridRef": "SR" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 100000.0, 100000.0 ], [ 100000.0, 200000.0 ], [ 200000.0, 200000.0 ], [ 200000.0, 100000.0 ], [ 100000.0, 100000.0 ] ] ] } },
+{ "type": "Feature", "properties": { "GridType": "100 km square", "GridRef": "SM" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 100000.0, 200000.0 ], [ 100000.0, 300000.0 ], [ 200000.0, 300000.0 ], [ 200000.0, 200000.0 ], [ 100000.0, 200000.0 ] ] ] } },
+{ "type": "Feature", "properties": { "GridType": "100 km square", "GridRef": "SS" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 200000.0, 100000.0 ], [ 200000.0, 200000.0 ], [ 300000.0, 200000.0 ], [ 300000.0, 100000.0 ], [ 200000.0, 100000.0 ] ] ] } },
+{ "type": "Feature", "properties": { "GridType": "100 km square", "GridRef": "SN" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 200000.0, 200000.0 ], [ 200000.0, 300000.0 ], [ 300000.0, 300000.0 ], [ 300000.0, 200000.0 ], [ 200000.0, 200000.0 ] ] ] } },
+{ "type": "Feature", "properties": { "GridType": "100 km square", "GridRef": "SH" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 200000.0, 300000.0 ], [ 200000.0, 400000.0 ], [ 300000.0, 400000.0 ], [ 300000.0, 300000.0 ], [ 200000.0, 300000.0 ] ] ] } },
+{ "type": "Feature", "properties": { "GridType": "100 km square", "GridRef": "ST" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 300000.0, 100000.0 ], [ 300000.0, 200000.0 ], [ 400000.0, 200000.0 ], [ 400000.0, 100000.0 ], [ 300000.0, 100000.0 ] ] ] } },
+{ "type": "Feature", "properties": { "GridType": "100 km square", "GridRef": "SO" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 300000.0, 200000.0 ], [ 300000.0, 300000.0 ], [ 400000.0, 300000.0 ], [ 400000.0, 200000.0 ], [ 300000.0, 200000.0 ] ] ] } },
+{ "type": "Feature", "properties": { "GridType": "100 km square", "GridRef": "SJ" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 300000.0, 300000.0 ], [ 300000.0, 400000.0 ], [ 400000.0, 400000.0 ], [ 400000.0, 300000.0 ], [ 300000.0, 300000.0 ] ] ] } }
+]
+}

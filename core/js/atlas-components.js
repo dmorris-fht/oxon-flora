@@ -8,14 +8,16 @@ define(
     // return a value that defines the module export
     // (i.e the functionality we want to expose for consumption)
     // Create module
+
     const components = {
 
       create: async function loadContent() {
   
-        const configSite = await general.getConfig("../user/config/site.txt") 
+        const configSite = await general.getConfig("../user/config/site.txt")
+        const configImages = await general.getConfig("../user/config/images.txt") 
         const configCore = await general.getConfig("config/config.txt") 
-        //console.log('configSite', configSite)
-        //console.log('configCore', configCore)
+
+
         generateHeader(configSite)
         generateFooter(configCore)
  
@@ -25,7 +27,7 @@ define(
           $footer.attr("class", "pt-5 my-5 text-body-secondary border-top")
           $footer.html(`
             <span class="me-2">
-              Created using <a href="https://github.com/BiologicalRecordsCentre/brevi-atlas-test">
+              Created using <a href="https://github.com/BiologicalRecordsCentre/configurable-atlas">
               BRC configurable atlas project</a> (version <b>${configCore.version}</b>).
             </span>
             <a href="admin.html">
@@ -39,14 +41,13 @@ define(
 
         function generateHeader(configSite) {
 
-          console.log('generateHeader')
           // Header tag
           const $header = $("#brc-header")
-          $header.attr("class", "xd-flex mb-5 border-bottom fs-1")
+          $header.attr("class", "xd-flex mb-5 border-bottom")
 
           // Logo and name
           const $divLogoNameNav = $("<div>")
-          $divLogoNameNav.attr("class", "d-flex flex-row p-2 align-items-center").appendTo($header)
+          $divLogoNameNav.attr("class", "d-flex flex-row p-2 align-items-center fs-1").appendTo($header)
 
           // Header background colour
           const headerColour = configSite['header-background-colour']
@@ -71,7 +72,7 @@ define(
             }
           }
           // Header text
-          const headerName = configSite.name ? configSite.name : "Site name configuration not specied"
+          const headerName = configSite.name ? configSite.name : "Site name configuration not specified"
           $('<div>').text(headerName).appendTo($divLogoNameNav)
 
           // Navigation
@@ -109,8 +110,8 @@ define(
           }
 
           // Carousel
+          // Undocumented feature for adding a carousel image to top of page
           if (location.pathname.substring(location.pathname.length - 9) === "main.html" && configSite['header-carousel']) {
-            //console.log('carousel', configSite['header-carousel'])
 
             const $carousel = $(`<div id="brc-header-carousel-div" class="carousel slide" data-bs-ride="carousel">`).appendTo($($header))
             
@@ -142,19 +143,62 @@ define(
             const carousel = new bootstrap.Carousel(document.getElementById("brc-header-carousel-div"))
             //carousel.cycle
           }
+
+          // Error message (to display YAML config file errors back to site admins)
+          const $err = $('<div>').appendTo($header)
+          if (configSite.errName) {
+            $err.html(`
+              <p>There was a problem reading the 'site.txt' config file...</p>
+              <pre>${configSite.errName}: ${configSite.errMessage}</pre>`
+            )
+          } else if (configImages.errName) {
+            $err.html(`
+              <p>There was a problem reading the 'images.txt' config file...</p>
+              <pre>${configImages.errName}: ${configImages.errMessage}</pre>`
+            )
+          }
         }
 
         function siteRoot() {
           // Not used
           const pathElements = window.location.pathname.split('/')
 
-          console.log(pathElements)
           if (pathElements[1] === 'core') {
             return ''
           } else {
             return `/${pathElements[1]}`
           }
         }
+      },
+
+      makeRadio: function makeRadio(id, label, val, checked, ls, $container, callbacks) {
+    
+        const $div = $('<div>').appendTo($container)
+        $div.css('display', 'inline-block')
+        $div.css('margin-left', '0.5em')
+        $div.attr('class', 'radio')
+        const $label = $('<label>').appendTo($div)
+        const $radio = $('<input>').appendTo($label)
+        const $span = $('<span>').appendTo($label)
+        $span.text(label)
+        $span.css('padding', '0 10px 0 5px')
+        $radio.attr('type', 'radio')
+        $radio.attr('name', `atlas-map-control-${id}`)
+        $radio.attr('class', `atlas-map-control-${val}`)
+        $radio.attr('value', val)
+        $radio.css('margin-left', 0)
+        if (checked) $radio.prop('checked', true)
+    
+        $radio.change(function (e) {
+          // Store value in local storage
+          localStorage.setItem(ls, val)
+          // Ensure that the control on other map matches this
+          $(`.atlas-map-control-${val}`).prop("checked", true)
+          // Callbacks
+          callbacks.forEach(cb => {
+            cb(val)
+          })
+        })
       }
     }
     // Return module

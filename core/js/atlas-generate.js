@@ -118,7 +118,7 @@ requirejs(["atlas-general", "atlas-components", "atlas-dates", "d3", "jszip.min"
 
   function createMapCsvDataStr(data) {
     const recs = data.map(d => {
-      return `${d.gr},${d.recn},${d.yearStart},${d.yearStart}` 
+      return `${d.gr},${d.recn},${d.yearStart},${d.yearEnd}` 
     })
     let dataString = `gr,recn,yearStart,yearEnd\r\n${recs.join("\r\n")}`
     return dataString
@@ -255,8 +255,24 @@ requirejs(["atlas-general", "atlas-components", "atlas-dates", "d3", "jszip.min"
           foundGr = dataArray.find(h => gr === h.gr)
           if (foundGr) {
             foundGr.recn += 1
-            foundGr.yearStart = foundGr.yearStart && foundGr.yearStart > startYear ? startYear : foundGr.yearStart
-            foundGr.yearEnd = foundGr.yearEnd && foundGr.yearEnd < endYear ? endYear : foundGr.yearEnd
+
+            //foundGr.yearStart = foundGr.yearStart && foundGr.yearStart > startYear ? startYear : foundGr.yearStart
+            if (startYear) {
+              if (!foundGr.yearStart) {
+                foundGr.yearStart = startYear
+              } else if (foundGr.yearStart > startYear) {
+                foundGr.yearStart = startYear
+              }
+            }
+            //foundGr.yearEnd = foundGr.yearEnd && foundGr.yearEnd < endYear ? endYear : foundGr.yearEnd
+            if (endYear) {
+              if (!foundGr.yearEnd) {
+                foundGr.yearEnd = endYear
+              } else if (foundGr.yearEnd < endYear) {
+                foundGr.yearEnd = endYear
+              }
+            }
+
           } else {
             dataArray.push({
               gr: gr,
@@ -269,8 +285,7 @@ requirejs(["atlas-general", "atlas-components", "atlas-dates", "d3", "jszip.min"
       }
     })
 
-    // console.log(jsonCsv.columns)
-    // console.log(jsonCsv)
+
     console.log(allData)
 
     // Create the map data and add to zip file
@@ -338,7 +353,6 @@ requirejs(["atlas-general", "atlas-components", "atlas-dates", "d3", "jszip.min"
         }
       }
     })
-    //console.log(allData)
 
     // Create the map data and add to zip file
     const zip = new JSZip()

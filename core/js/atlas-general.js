@@ -18,8 +18,30 @@ define(
             cache: false,
             // async:  false,
             success: function (data) {
-              const json = jsyaml.load(data)
-              resolve(json)
+              let config = {}
+              try {
+                if (jsyaml.load(data)) {
+                  config = jsyaml.load(data)
+                }
+              } catch (e) {
+                config = {
+                  errName: e.name,
+                  errMessage: e.message
+                }
+              }
+              config.get = (argString) => {
+                const args = argString.split('.')
+                val = config
+                try {
+                  for (let i=0; i < args.length; i++) {
+                    val = val[args[i]]
+                  }
+                } catch (e) {
+                  val = null
+                }
+                return typeof val === 'undefined' ? null : val
+              }
+              resolve(config)
             },
             error: function (error) {
               resolve({})
@@ -47,33 +69,12 @@ define(
               return ext === 'md' ? md.marked.parse(data) : data
             })
           } catch(e) {
-            ret = `There was an reading file '${file}'.`
+            ret = `There was an error reading file '${file}'.`
           }
         } else {
           ret = `File '${file}' does not have an .md or .html extension.`
         }
         return ret
-      },
-      setCookie: function setCookie(cname, cvalue, exdays) {
-        const d = new Date();
-        d.setTime(d.getTime() + (exdays*24*60*60*1000));
-        let expires = "expires="+ d.toUTCString();
-        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-      },
-      getCookie: function getCookie(cname) {
-        let name = cname + "=";
-        let decodedCookie = decodeURIComponent(document.cookie);
-        let ca = decodedCookie.split(';');
-        for(let i = 0; i <ca.length; i++) {
-          let c = ca[i];
-          while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-          }
-          if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-          }
-        }
-        return "";
       }
     }
     // Return module

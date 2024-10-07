@@ -16,3 +16,12 @@
   position: relative;
   top: 10px;
 }
+
+#brc-tab-gallery.shift-caption .lightGallery-captions {
+  transform: translate(0, -80px);
+}
+
+.atlas-control {
+  margin: 0.5em 0
+}
+
